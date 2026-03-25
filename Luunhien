@@ -4,7 +4,7 @@
 // @version      0.5
 // @description  Fastest Mass Ejector & Split Macro
 // @author       Tom Burris
-// @match        https://tranhdau.net/index5.php
+// @match        http://*/*
 // @grant        none
 // @run-at       document-end
 // ==/UserScript==
