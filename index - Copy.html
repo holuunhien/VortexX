@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Học Python Lớp 10</title>
+    <!-- Giữ nguyên liên kết file style.css của bạn -->
+    <link rel="stylesheet" href="style.css"> 
+    <style>
+        /* Các thuộc tính CSS bổ sung để tạo hiệu ứng cho Form và Danh sách tên */
+        .welcome-box {
+            background: rgba(255, 255, 255, 0.9);
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .welcome-box p { margin-bottom: 12px; font-weight: bold; color: #1e293b; }
+        .input-group { display: flex; gap: 10px; justify-content: center; }
+        .input-name {
+            padding: 10px 15px;
+            border: 2px solid #306998;
+            border-radius: 20px;
+            outline: none;
+            font-size: 15px;
+            width: 60%;
+            transition: 0.3s;
+        }
+        .input-name:focus { border-color: #ffd43b; box-shadow: 0 0 5px rgba(244, 212, 59, 0.5); }
+        .btn-submit {
+            background: #306998;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-submit:hover { background: #1e293b; }
+        
+        /* Khu vực danh sách những người đã tham gia học */
+        .visitor-section {
+            max-width: 800px;
+            margin: 50px auto 20px auto;
+            padding: 20px;
+            background: #f8fafc;
+            border-radius: 8px;
+            border-top: 4px solid #306998;
+            text-align: left;
+        }
+        .visitor-title { font-size: 18px; color: #1e293b; font-weight: bold; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+        .visitor-list { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+        .visitor-item {
+            background: #e2e8f0;
+            color: #334155;
+            padding: 6px 14px;
+            border-radius: 15px;
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .visitor-item::before { content: "⚡"; }
+
+        /* Giữ nguyên các phần CSS cũ của bạn (đã bổ sung căn chỉnh stretch cho bằng nhau) */
+        .lesson-container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; text-align: center; }
+        .grid-lessons { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 15px; text-align: left; margin-bottom: 40px; align-items: stretch; }
+        .lesson-card { background-color: white; padding: 15px 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-left: 4px solid #306998; color: #333; display: flex; flex-direction: column; justify-content: space-between; }
+        .code-inline { background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 14px; color: #0f172a; }
+        .main-banner { padding: 60px 20px; text-align: center; background: url('image_18846e.jpg') no-repeat center/cover; color: #1e293b; }
+        .btn-start { display: inline-block; background-color: #1e293b; color: white; text-decoration: none; padding: 12px 30px; border-radius: 25px; font-weight: bold; font-size: 16px; margin-top: 15px; transition: 0.3s; }
+        .btn-start:hover { background-color: #306998; }
+    </style>
+</head>
+<body>
+
+    <!-- Khung Banner Chào Mừng -->
+    <div class="main-banner">
+        <h1 id="greetingTitle" style="font-size: 32px; font-weight: bold; margin-bottom: 15px;">Chào mừng bạn đến với thế giới Python!</h1>
+        <p style="font-size: 16px; max-width: 600px; margin: 0 auto; line-height: 1.6;">Python là ngôn ngữ lập trình mạnh mẽ, dễ học và là hành trang không thể thiếu trong chương trình Tin học cấp 3.</p>
+        
+        <!-- MỤC GIỚI THIỆU TÊN: Form nhận tên người dùng -->
+        <div class="welcome-box">
+            <p id="welcomePrompt">Hãy cho tôi biết tên của bạn để bắt đầu lưu tiến độ nhé:</p>
+            <div class="input-group">
+                <input type="text" id="userNameInput" class="input-name" placeholder="Nhập tên hoặc biệt danh của bạn...">
+                <button type="button" class="btn-submit" onclick="luuTenNguoiDung()">Xác nhận</button>
+            </div>
+        </div>
+
+        <a href="baihoc.html" class="btn-start">Bắt đầu học ngay</a>
+    </div>
+
+    <!-- Khối Danh Sách Bài Học (Đã tinh chỉnh chính tả và độ cao cân bằng) -->
+    <div class="lesson-container">
+        <h2 style="font-size: 24px; margin-bottom: 25px; color: #1e293b;">Các kiến thức cốt lõi đã học</h2>
+        
+        <div class="grid-lessons">
+            <div class="lesson-card">
+                <h3 style="color: #306998; margin-bottom: 8px;">1. Cấu trúc Rẽ nhánh</h3>
+                <p style="font-size: 14px; line-height: 1.5; color: #64748b;">Học cách sử dụng lệnh <span class="code-inline">if</span>, <span class="code-inline">elif</span>, và <span class="code-inline">else</span> để rẽ nhánh chương trình.</p>
+            </div>
+            <div class="lesson-card">
+                <h3 style="color: #306998; margin-bottom: 8px;">2. Vòng lặp</h3>
+                <p style="font-size: 14px; line-height: 1.5; color: #64748b;">Sử dụng vòng lặp <span class="code-inline">for</span> và <span class="code-inline">while</span> để tự động lặp lại các công việc nhàm chán.</p>
+            </div>
+            <div class="lesson-card">
+                <h3 style="color: #306998; margin-bottom: 8px;">3. Hàm & Chỗ giữ</h3>
+                <p style="font-size: 14px; line-height: 1.5; color: #64748b;">Cách gom nhóm code bằng <span class="code-inline">def</span> và Cách dùng lệnh <span class="code-inline">pass</span> để đặt gạch giữ chỗ.</p>
+            </div>
+            <div class="lesson-card">
+                <h3 style="color: #306998; margin-bottom: 8px;">4. Kiểu dữ liệu danh sách</h3>
+                <p style="font-size: 14px; line-height: 1.5; color: #64748b;">Cách xác định độ dài của một list nào đó bằng lệnh <span class="code-inline">len()</span> và cách dùng lệnh <span class="code-inline">del</span> để xóa một phần tử của list.</p>
+            </div>
+        </div>
+
+        <!-- HIỂN THỊ DANH SÁCH NHỮNG NGƯỜI ĐÃ NHẬP TÊN -->
+        <div class="visitor-section">
+            <div class="visitor-title">👥 Danh sách học viên đã tham gia:</div>
+            <ul id="visitorList" class="visitor-list">
+                <!-- Tên người dùng nhập vào sẽ tự động hiển thị ở đây bằng JS -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- PHẦN XỬ LÝ JAVASCRIPT THÔNG MINH -->
+    <script>
+        // Khi trang web được tải lên, hiển thị ngay danh sách những tên đã lưu trước đó
+        document.addEventListener("DOMContentLoaded", function() {
+            capNhatGiaoDienDanhSach();
+            
+            // Nếu người dùng hiện tại đã từng nhập tên trước đó rồi, đổi dòng tiêu đề chào mừng họ luôn
+            let tenHienTai = localStorage.getItem("currentPythonUser");
+            if (tenHienTai) {
+                document.getElementById("greetingTitle").innerText = "Chào mừng " + tenHienTai + " đã quay lại với thế giới Python! 👋";
+                document.getElementById("userNameInput").value = tenHienTai;
+                document.getElementById("welcomePrompt").innerText = "Bạn muốn đổi sang một tên gọi khác không?";
+            }
+        });
+
+        // Hàm xử lý khi người dùng bấm nút "Xác nhận" tên
+        function luuTenNguoiDung() {
+            let inputField = document.getElementById("userNameInput");
+            let tenNhapVao = inputField.value.trim();
+
+            if (tenNhapVao === "") {
+                alert("Vui lòng nhập một cái tên hợp lệ nha bạn!");
+                return;
+            }
+
+            // 1. Lưu tên người dùng hiện tại
+            localStorage.setItem("currentPythonUser", tenNhapVao);
+
+            // 2. Lấy danh sách lịch sử tất cả các tên cũ ra (nếu chưa có thì tạo mảng rỗng)
+            let danhSachTen = JSON.parse(localStorage.getItem("allPythonUsers")) || [];
+
+            // 3. Nếu tên này chưa từng xuất hiện trong danh sách, thì mới thêm vào để tránh trùng lặp
+            if (!danhSachTen.includes(tenNhapVao)) {
+                danhSachTen.push(tenNhapVao);
+                localStorage.setItem("allPythonUsers", JSON.stringify(danhSachTen));
+            }
+
+            // 4. Thay đổi lời chào trên banner ngay lập tức cho sinh động
+            document.getElementById("greetingTitle").innerText = "Chào mừng " + tenNhapVao + " đến với thế giới Python! 🚀";
+            
+            // 5. Làm mới lại danh sách hiển thị phía dưới
+            capNhatGiaoDienDanhSach();
+            
+            alert("Đã ghi nhận thành công tên: " + tenNhapVao);
+        }
+
+        // Hàm đọc dữ liệu từ localStorage để in danh sách ra màn hình HTML
+        function capNhatGiaoDienDanhSach() {
+            let containerUl = document.getElementById("visitorList");
+            let danhSachTen = JSON.parse(localStorage.getItem("allPythonUsers")) || [];
+
+            // Xóa danh sách cũ đi để render lại từ đầu
+            containerUl.innerHTML = "";
+
+            if (danhSachTen.length === 0) {
+                containerUl.innerHTML = "<span style='color: #94a3b8; font-style: italic;'>Chưa có học viên nào đăng ký. Hãy là người đầu tiên!</span>";
+                return;
+            }
+
+            // Duyệt qua mảng tên và tạo các thẻ li đẹp mắt
+            danhSachTen.forEach(function(ten) {
+                let li = document.createElement("li");
+                li.className = "visitor-item";
+                li.innerText = ten;
+                containerUl.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>
