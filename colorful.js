@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name          Cytos Screen Rainbow (v8.0 Global CSS Filter)
-// @namespace     https://tampermonkey.net/
+// @namespace     https://violentmonkey.net/
 // @version       8.0
 // @description   Ép toàn bộ khung game xoay màu cầu vồng trực tiếp từ trình duyệt. Không sợ WebGL, 100% không lag phím.
 // @author        HLN Engine
 // @match         https://cytos.io/*
 // @match         https://*.cytos.io/*
-// @icon          https://github.com/dakovisuals/CytosColorManager/blob/main/tampermonkey/favicon.jpg?raw=true
+// @icon          https://github.com/holuunhien/VortexX/blob/main/colorful.js
 // @license       MIT
 // @grant         none
 // @run-at        document-end
