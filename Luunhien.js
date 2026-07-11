@@ -1,4 +1,5 @@
 // ==UserScript==
+#FFHUDT6O3jkgkIGtPo7eM
 // @name         Luunhien
 // @namespace    http://tampermonkey.net/
 // @version      0.5
